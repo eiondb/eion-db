@@ -2,17 +2,11 @@ import eionLogoPath from "@assets/eion-logo-original_1750391475394.jpg";
 
 export default function Footer() {
   const resourceLinks = [
-    { name: "Documentation", href: "#" },
-    { name: "API Reference", href: "#" },
-    { name: "Examples", href: "#" },
-    { name: "Community", href: "#" }
+    { name: "Documentation", href: "#" }
   ];
 
   const connectLinks = [
-    { name: "GitHub", href: "https://github.com/eion" },
-    { name: "Discord", href: "#" },
-    { name: "Twitter", href: "#" },
-    { name: "Blog", href: "#" }
+    { name: "GitHub", href: "https://github.com/eion" }
   ];
 
   return (
@@ -31,7 +25,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-gray-600 max-w-md">
-              Enabling the first shared thoughts in artificial intelligence through unified knowledge graphs for multi-agent systems.
+              Enabling the first shared thoughts in artificial intelligence.
             </p>
           </div>
           
@@ -72,7 +66,7 @@ export default function Footer() {
         
         <div className="border-t border-gray-200 mt-8 pt-8 text-center">
           <p className="text-gray-600">
-            © 2024 Eion. Open source and built with ❤️ for the AI community.
+            © 2025 Eion
           </p>
         </div>
       </div>

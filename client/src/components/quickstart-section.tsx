@@ -58,47 +58,6 @@ export default function QuickstartSection() {
             </motion.div>
           ))}
         </div>
-        
-        <motion.div 
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <motion.a 
-            href="#" 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 rounded-xl font-semibold transition-all shadow-lg"
-            style={{ 
-              backgroundColor: 'var(--eion-cream)', 
-              color: 'var(--eion-navy)' 
-            }}
-          >
-            View Documentation
-          </motion.a>
-          <motion.a 
-            href="#" 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="border-2 px-8 py-4 rounded-xl font-semibold transition-all"
-            style={{ 
-              borderColor: 'var(--eion-cream)', 
-              color: 'var(--eion-cream)' 
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--eion-cream)';
-              e.currentTarget.style.color = 'var(--eion-navy)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = 'var(--eion-cream)';
-            }}
-          >
-            See Examples
-          </motion.a>
-        </motion.div>
       </div>
     </section>
   );
