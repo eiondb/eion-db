@@ -5,7 +5,7 @@ import { useGitHubStars } from "@/hooks/use-github-stars";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { formattedStars, loading } = useGitHubStars('https://api.github.com/repos/cloi-ai/cloi');
+  const { formattedStars, loading } = useGitHubStars('https://api.github.com/repos/eiondb/eion');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -91,7 +91,9 @@ export default function Navigation() {
               Quickstart
             </a>
             <a 
-              href="#docs" 
+              href="https://pypi.org/project/eiondb/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="transition-colors duration-300"
               style={{
                 color: isScrolled ? 'rgb(75, 85, 99)' : 'rgba(240, 224, 199, 0.9)'
@@ -106,7 +108,7 @@ export default function Navigation() {
               Docs
             </a>
             <a 
-              href="https://github.com/cloi-ai/cloi" 
+              href="https://github.com/eiondb/eion" 
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 border-2"

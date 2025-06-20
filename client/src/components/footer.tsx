@@ -2,11 +2,11 @@ import eionLogoPath from "@assets/eion-logo-original_1750391475394.jpg";
 
 export default function Footer() {
   const resourceLinks = [
-    { name: "Documentation", href: "#" }
+    { name: "Documentation", href: "https://pypi.org/project/eiondb/" }
   ];
 
   const connectLinks = [
-    { name: "GitHub", href: "https://github.com/eion" }
+    { name: "GitHub", href: "https://github.com/eiondb/eion" }
   ];
 
   return (
@@ -36,6 +36,8 @@ export default function Footer() {
                 <li key={link.name}>
                   <a 
                     href={link.href} 
+                    target={link.href.startsWith('http') ? '_blank' : undefined}
+                    rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="text-gray-600 hover:text-[var(--eion-navy)] transition-colors"
                   >
                     {link.name}

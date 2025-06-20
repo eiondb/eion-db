@@ -1,28 +1,27 @@
 import { motion } from "framer-motion";
 
 export default function CodeExampleSection() {
-  const codeString = `# Initialize shared memory for multi-agent system
-from eion import SharedMemory, Agent
+  const codeString = `# Connect to EionDB cluster for multi-agent coordination
+from eiondb import EionClient
 
-# Create unified knowledge graph
-memory = SharedMemory()
+# Initialize client connection
+client = EionClient()
 
-# Connect agents to shared intelligence
-agent_a = Agent("research", memory=memory)
-agent_b = Agent("analysis", memory=memory)
+# Register collaborative agents
+agent_a = client.register_agent(
+    agent_id="researcher",
+    name="Research Assistant", 
+    permission="crud",
+    description="Gathers and analyzes information"
+)
+agent_b = client.register_agent(
+    agent_id="analyst", 
+    name="Data Analyst",
+    permission="crud",
+    description="Processes research findings"
+)
 
-# Agent A discovers new knowledge
-agent_a.store_insight("user_preferences", {
-    "category": "shopping",
-    "confidence": 0.95,
-    "context": "frequent_purchases"
-})
-
-# Agent B instantly accesses shared knowledge
-insights = agent_b.query_memory("user_preferences")
-print(f"Shared knowledge: {insights}")
-
-# The first shared thought is born`;
+# The first shared mind is born`;
 
   return (
     <section className="py-20 bg-white section-reveal">
@@ -38,7 +37,7 @@ print(f"Shared knowledge: {insights}")
             The First Connection
           </h2>
           <p className="text-xl text-gray-600">
-            See how easy it is to enable shared intelligence between agents
+            See how easy it is to connect agents through EionDB's shared intelligence platform
           </p>
         </motion.div>
         
@@ -56,7 +55,7 @@ print(f"Shared knowledge: {insights}")
               <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
               <div className="w-3 h-3 bg-green-400 rounded-full"></div>
             </div>
-            <span className="text-sm" style={{ color: 'rgba(240, 224, 199, 0.6)' }}>shared_memory.py</span>
+            <span className="text-sm" style={{ color: 'rgba(240, 224, 199, 0.6)' }}>agent_connection.py</span>
           </div>
           
           <pre className="font-mono text-sm overflow-x-auto" style={{ color: 'var(--eion-cream)' }}>
@@ -72,17 +71,17 @@ print(f"Shared knowledge: {insights}")
                 >
                   {line.startsWith('#') ? (
                     <span className="text-gray-400">{line}</span>
-                  ) : line.includes('from') || line.includes('import') ? (
+                  ) : line.trim().startsWith('from') || line.trim().startsWith('import') ? (
                     <span>
-                      <span className="text-blue-300">from</span> <span className="text-green-300">eion</span> <span className="text-blue-300">import</span> SharedMemory, Agent
+                      {line.match(/^(\s*)/)?.[1]}<span className="text-blue-300">from</span> <span className="text-green-300">eiondb</span> <span className="text-blue-300">import</span> EionClient
                     </span>
-                  ) : line.includes('=') && !line.includes('print') ? (
+                  ) : line.includes('=') && !line.includes('print') && line.trim() !== '' ? (
                     <span>
-                      <span className="text-yellow-300">{line.split('=')[0].trim()}</span> = {line.split('=')[1]}
+                      {line.match(/^(\s*)/)?.[1]}<span className="text-yellow-300">{line.split('=')[0].trim()}</span> = {line.split('=').slice(1).join('=')}
                     </span>
                   ) : line.includes('print') ? (
                     <span>
-                      <span className="text-blue-300">print</span>(<span className="text-green-300">f"Shared knowledge: {'{insights}'}"</span>)
+                      {line.match(/^(\s*)/)?.[1]}<span className="text-blue-300">print</span>(<span className="text-green-300">f"Connected agents: {'{len(client.list_agents())}'}"</span>)
                     </span>
                   ) : (
                     line
