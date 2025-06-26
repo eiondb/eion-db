@@ -4,6 +4,8 @@ import HeroSection from "@/components/hero-section";
 import ProblemSection from "@/components/problem-section";
 import SolutionSection from "@/components/solution-section";
 import CodeExampleSection from "@/components/code-example-section";
+import VideoSection from "@/components/video-section";
+import UseCasesSection from "@/components/use-cases-section";
 import QuickstartSection from "@/components/quickstart-section";
 import Footer from "@/components/footer";
 
@@ -37,6 +39,8 @@ export default function Home() {
       <ProblemSection />
       <SolutionSection />
       <CodeExampleSection />
+      <VideoSection />
+      <UseCasesSection />
       <QuickstartSection />
       <Footer />
     </div>
