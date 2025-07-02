@@ -6,7 +6,8 @@ export default function Footer() {
   ];
 
   const connectLinks = [
-    { name: "GitHub", href: "https://github.com/eiondb/eion" }
+    { name: "GitHub", href: "https://github.com/eiondb/eion" },
+    { name: "Discord", href: "https://discord.gg/mMNckGYVbq" }
   ];
 
   return (

@@ -108,6 +108,23 @@ export default function Navigation() {
               Docs
             </a>
             <a 
+              href="https://discord.gg/mMNckGYVbq" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors duration-300"
+              style={{
+                color: isScrolled ? 'rgb(75, 85, 99)' : 'rgba(240, 224, 199, 0.9)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = isScrolled ? 'var(--eion-navy)' : 'var(--eion-cream)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = isScrolled ? 'rgb(75, 85, 99)' : 'rgba(240, 224, 199, 0.9)';
+              }}
+            >
+              Discord
+            </a>
+            <a 
               href="https://github.com/eiondb/eion" 
               target="_blank"
               rel="noopener noreferrer"
